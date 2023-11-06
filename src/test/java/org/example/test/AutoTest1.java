@@ -1,5 +1,6 @@
 package org.example.test;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.page.InfoPage;
 import org.example.page.MainPage;
 import org.example.page.SearchAllPage;
@@ -15,13 +16,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
-
 import java.io.IOException;
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Slf4j
 public class AutoTest1 {
 
     public static WebDriver chromeDriver;
@@ -128,12 +129,8 @@ public class AutoTest1 {
     @Test
     @Order(8)
     public void testCase2Step4() {
-        boolean before = searchAllPage.existSteamOSAndLinux();
-        System.out.println("ос до: "+ before);
-
         searchAllPage.enableSteamOSAndLinux();
         boolean after = searchAllPage.existSteamOSAndLinux();
-        System.out.println("ос после: "+ after);
 
         assertTrue(after, "Ошибка, чекбокс не включен.");
 
@@ -142,12 +139,8 @@ public class AutoTest1 {
     @Test
     @Order(9)
     public void testCase2Step5() {
-        boolean before = searchAllPage.existCoopLan();
-        System.out.println("кооп до: "+ before);
-
         searchAllPage.enableCoopLan();
         boolean after = searchAllPage.existCoopLan();
-        System.out.println("кооп после: "+ after);
 
         assertTrue(after, "Ошибка, чекбокс не включен.");
     }
@@ -155,13 +148,8 @@ public class AutoTest1 {
     @Test
     @Order(10)
     public void testCase2Step6() {
-        boolean a = searchAllPage.existAction();
-        System.out.println("экшн до: "+ a);
-
-
         searchAllPage.enableAction();
         boolean check = searchAllPage.existAction();
-        System.out.println("экшн после: "+ check);
 
         assertTrue(check, "Ошибка, чекбокс не включен.");
 

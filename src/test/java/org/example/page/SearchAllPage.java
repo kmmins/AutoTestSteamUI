@@ -57,7 +57,7 @@ public class SearchAllPage {
     }
 
     public boolean existSteamOSAndLinux() {
-        return steamOSAndLinux.isSelected();
+        return steamOSAndLinux.isEnabled();
     }
 
     public void enableCoopLan() {
@@ -73,7 +73,7 @@ public class SearchAllPage {
     }
 
     public boolean existCoopLan() {
-        return coopLan.isSelected();
+        return coopLan.isEnabled();
     }
 
     public void enableAction() {
@@ -89,7 +89,7 @@ public class SearchAllPage {
     }
 
     public boolean existAction() {
-        return action.isSelected();
+        return action.isEnabled();
     }
 
     public String getGamesInfo() {
